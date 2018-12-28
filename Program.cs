@@ -45,7 +45,7 @@ namespace ConsoleApp1
             Console.WriteLine();
 
             //
-            
+
             int i = 123;
             object o = i;
             o = 123;
@@ -103,7 +103,64 @@ namespace ConsoleApp1
             Console.WriteLine(sdg + asf);
             Console.WriteLine(asf);
             Console.WriteLine();
-            Array a1 = new Array[4];
+
+            //
+
+            int[,] a1 = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            for (int k = 0; k < a1.GetLength(0); k++)
+            {
+                for (int h = 0; h < a1.GetLength(0); h++)
+                {
+                    Console.Write(a1[k, h] + "\t");
+                }
+                Console.WriteLine();
+            }
+            string[] a2 = new string[3] { "К 1", "с 2", "о 3" };
+            for (int k = 0; k < a1.GetLength(0); k++)
+            {
+                Console.Write(a2[k] + "; ");
+            }
+            Console.WriteLine();
+            string a3, a4;
+            int a5, a6;
+            a3 = Console.ReadLine();
+            a4 = Console.ReadLine();
+            a5 = Convert.ToInt32(a3) - 1;
+            a6 = Convert.ToInt32(a4) - 1;
+            a3 = a2[a5];
+            a2[a5] = a2[a6];
+            a2[a6] = a3;
+            for (int k = 0; k < a1.GetLength(0); k++)
+            {
+                Console.Write(a2[k] + "; ");
+            }
+            Console.WriteLine();
+            double[][] b1 = new double[3][];
+            b1[0] = new double[2] { 1.2, 2.3};
+            b1[1] = new double[3] { 1.2, 2.3, 3.4 };
+            b1[2] = new double[4] { 1.2, 2.3, 3.4, 4.5 };
+            for (int k = 0; k < b1.Length; k++)
+            {
+                for (int l = 0; l < b1[k].Length; l++)
+                {
+                    Console.Write(b1[k][l] + "\t");
+                }
+                Console.WriteLine();
+            }
+            var с1 = new object[0];
+            var с2 = "";
+            Console.WriteLine();
+
+            //
+
+            (int, string, char, string, ulong) d1 = (1, "2", '3', "4", 5);
+            Console.WriteLine(d1.Item1 + "; " + d1.Item2 + "; " + d1.Item3 + "; " + d1.Item4 + "; " + d1.Item5 + ".");
+            Console.WriteLine(d1.Item1 + "; " + d1.Item3 + "; " + d1.Item4 + ".");
+            int d3 = d1.Item1;
+            string d4 = d1.Item2;
+            char d5 = d1.Item3;
+            string d6 = d1.Item4;
+            ulong d7 = d1.Item5;
 
             //---------------------
 
